@@ -1,5 +1,5 @@
 #include "Kannbal.hpp"
-ESP8266WebServer server(80);
+ESP8266WebServer server(443);
 
 int digital_id;
 String temp_id;
