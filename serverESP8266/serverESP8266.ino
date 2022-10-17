@@ -5,6 +5,7 @@
 #include "Server.hpp"
 #include "ESP8266_Utils.hpp"
 
+
 void setup(void) 
 {
    Serial.begin(115200);
@@ -12,6 +13,7 @@ void setup(void)
    ConnectWiFi_STA();
  
    InitServer();
+  
 }
  
 void loop()

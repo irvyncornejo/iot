@@ -23,6 +23,7 @@ void setDigitalValue(){
   if(server.arg(String("value")).length() > 0){
     Serial.println("Set PWM Value");
     int value = defineDigitalValue(server.arg(String("value")));
+    Serial.println(value);
     single_actuator.pwmValue(value);
   }
 }
@@ -44,7 +45,9 @@ void setRGB(){
 }
 
 void getAnalogicSensor(){
-  // TODO
+  TemperatureSensor sensor = TemperatureSensor(A0);
+   float temp = sensor.getValue();
+   server.send(200, "text/plain", String(temp));
 }
 
 // Funcion que se ejecutara en la URI '/'
@@ -72,7 +75,7 @@ void InitServer()
    server.on("/generic-digital", HTTP_POST, setDigitalGenericValue);
    server.on("/rgb", HTTP_POST, setRGB);
    server.on("/servo", HTTP_POST, setServo);
-   server.on("/analoginc-sensor", HTTP_GET, getAnalogicSensor);
+   server.on("/analogic-sensor", HTTP_GET, getAnalogicSensor);
  
    server.onNotFound(handleNotFound);
  
