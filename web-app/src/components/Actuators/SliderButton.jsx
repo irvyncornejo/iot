@@ -31,7 +31,8 @@ const SliderButton = (props) => {
 
 	const handleStateSlider = (value) => {
 		const path = `${props.localIp}/${props.type}`
-		LocalServices.changeState(path, `?id=${props.id}&value=${value.target.value}`)
+		const value_slider = parseInt(parseInt(value.target.value)*2.55)
+		LocalServices.changeState(path, `?id=${props.id}&value=${value_slider}`)
 	}
 	
   return (

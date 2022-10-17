@@ -7,28 +7,28 @@ const actuators = [
   {
     name:'Luz Oficina', 
     id:'2', 
-    type:'led',
+    type:'generic-digital',
     typeValue: 'boolean',
     localIp: '192.168.1.141'
   },
   {
     name:'Cafetera', 
-    id:'3', 
-    type:'led',
+    id:'4', 
+    type:'generic-digital',
     typeValue: 'boolean',
     localIp: '192.168.1.141'
   },
   {
-    name:'Luz Sala', 
-    id:'4', 
-    type:'led',
+    name:'Luz Verde', 
+    id:'16', 
+    type:'generic-digital',
     typeValue: 'slider',
     localIp: '192.168.1.141'
   },
   {
-    name:'Luz Cuarto', 
-    id:'5', 
-    type:'led',
+    name:'Lámpara', 
+    id:'0', 
+    type:'generic-digital',
     typeValue: 'slider',
     localIp: '192.168.1.141'
   }

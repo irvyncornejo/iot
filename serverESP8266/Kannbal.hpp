@@ -22,7 +22,7 @@ class TemperatureSensor{
   }
   float getValue(){
     int valuePin = analogRead(pin);
-    float tempC = (5.0 * valuePin * 100.0)/1024;
+    float tempC = (3.3 * valuePin * 100.0)/1024;
     return tempC;
   }
 };
