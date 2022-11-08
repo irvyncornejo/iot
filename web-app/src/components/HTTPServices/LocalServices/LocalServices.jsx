@@ -1,6 +1,6 @@
 class LocalServices{
   changeState = async (path, queryParams) => {
-    await fetch(`http://${path}${queryParams}`, { mode: 'no-cors', method: 'POST' })
+    await fetch(`https://${path}/`, { mode: 'no-cors', method: 'POST' })
   }
 }
 
