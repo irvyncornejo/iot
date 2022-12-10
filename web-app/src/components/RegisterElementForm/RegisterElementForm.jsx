@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Button } from "@mui/material"
+import { Button, FormControl, InputLabel, Select, MenuItem } from "@mui/material"
 import Fab from '@mui/material/Fab'
 import AddIcon from '@mui/icons-material/Add'
 import TextField from '@mui/material/TextField'
@@ -9,6 +9,10 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 import '../../App.css'
+
+
+const typeSensors = ['Digital', 'Análogico']
+const typeActuators = ['Boleano', 'PWM']
 
 const RegisterElementForm = () => {
   const [open, setOpen] = useState(false)
@@ -27,12 +31,34 @@ const RegisterElementForm = () => {
           <AddIcon />
         </Fab>
         <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Registrar un nuevo elemento</DialogTitle>
+        <DialogTitle>Registrar un nuevo dispositivo.</DialogTitle>
         <DialogContent>
-          <DialogContentText>
+          <DialogContentText style={{paddingBottom:'20px'}}>
             Para poder visualizar o controlar los disposivos locales es necesario registrarlos
             según el tipo de hardware y su dirección IP local.
           </DialogContentText>
+          <FormControl variant="standard" fullWidth>
+            <InputLabel id="demo-simple-select-standard-label">Tipo de componente</InputLabel>
+            <Select
+              labelId="demo-simple-select-standard-label"
+              id="demo-simple-select-standard"
+              label="Componente"
+            >
+              <MenuItem value={'sensor'}>Sensor</MenuItem>
+              <MenuItem value={'actuador'}>Actuador</MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl variant="standard" fullWidth>
+            <InputLabel id="demo-simple-select-standard-label">Tipo de elemento</InputLabel>
+            <Select
+              labelId="demo-simple-select-standard-label"
+              id="demo-simple-select-standard"
+              label="elemento"
+            >
+              <MenuItem value={'sensor'}>Sensor</MenuItem>
+              <MenuItem value={'actuador'}>Actuador</MenuItem>
+            </Select>
+          </FormControl>
           <TextField
             autoFocus
             margin="dense"
@@ -42,7 +68,6 @@ const RegisterElementForm = () => {
             variant="standard"
           />
           <TextField
-            autoFocus
             margin="dense"
             id="name"
             label="Nombre del dispositivo"
@@ -51,8 +76,8 @@ const RegisterElementForm = () => {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Subscribe</Button>
+          <Button onClick={handleClose}>Cancelar</Button>
+          <Button onClick={handleClose}>Añadir</Button>
         </DialogActions>
       </Dialog>
       </div>
