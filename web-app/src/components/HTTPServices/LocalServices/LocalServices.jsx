@@ -1,6 +1,13 @@
 class LocalServices{
+  constructor(security=false){
+    this.security = security
+  }
   changeState = async (path, queryParams) => {
-    await fetch(`http://${path}${queryParams}`, { mode: 'no-cors', method: 'POST', referrerPolicy: ['unsafe_url'] })
+    const securityProtocol = 'https' ? this.security : 'http'
+    await fetch(
+      `${securityProtocol}://${path}${queryParams}`,
+      { mode: 'no-cors', method: 'POST' }
+    )
   }
 }
 
