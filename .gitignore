@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 #server esp8266 config
 serverESP8266/config.h
+#Python vitual env dirs
+/env
+/venv
