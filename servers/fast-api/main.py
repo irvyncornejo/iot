@@ -1,20 +1,26 @@
 #scp -r fast-api pi@192.168.1.79:/home/pi/Documentos
 from typing import Any
+
 import uvicorn
 from fastapi import FastAPI
-from fastapi_mqtt import FastMQTT, MQTTConfig
+import paho.mqtt.client as mqtt
 from gpiozero import Button
 
 from hardware.components_type import Component
 from hardware.create import CreateComponents
+from setting import logger
 
 app = FastAPI()
+
+client = mqtt.Client()
+client.connect("mqtt.eclipseprojects.io", 1883, 60)
 
 components: Any = CreateComponents()
 
 def say_hello():
     print(button.pin)
-    print('presionados')
+    logger.info('Presionado..')
+    client.publish("sensor/uno", 'presionado')
 
 button = Button(14)
 
