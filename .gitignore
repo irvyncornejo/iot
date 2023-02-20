@@ -26,3 +26,4 @@ serverESP8266/config.h
 #Python vitual env dirs
 /env
 /venv
+/.vscode
