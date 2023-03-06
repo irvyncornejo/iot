@@ -27,3 +27,7 @@ serverESP8266/config.h
 /env
 /venv
 /.vscode
+
+/servers/esp32/rtos/build
+/servers/esp32/almacenamiento/build
+/servers/esp32/digital-output/build
