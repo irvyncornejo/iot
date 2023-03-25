@@ -31,5 +31,4 @@ serverESP8266/config.h
 /servers/esp32/rtos/build
 /servers/esp32/almacenamiento/build
 /servers/esp32/digital-output/build
-
-/servers/raspi-pico-w/basic-http-server/*
+/servers/esp32/digital-input/build
