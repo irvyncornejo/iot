@@ -26,3 +26,9 @@ serverESP8266/config.h
 #Python vitual env dirs
 /env
 /venv
+/.vscode
+
+/servers/esp32/rtos/build
+/servers/esp32/almacenamiento/build
+/servers/esp32/digital-output/build
+/servers/esp32/digital-input/build
