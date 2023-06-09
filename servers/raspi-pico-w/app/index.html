@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+    <head>
+
+    </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <html>
+    <body class="container">
+        <div class="row">
+            <h2 class="text-custom">IoT Dashboard Control</h2>
+            <p class="text-blue-grey darken-4 right-align">Raspberry Temp {temperature} °C</p>
+            <div class="col s12 m6 l3">
+              <div class="card-panel hoverable card-size">
+                <span class="text-custom">
+                    <p>LED 1 is {state}</p>
+                </span>
+                <p></p>
+                <div class="row">
+                    <div class="col s6 m6 l6 right-align">
+                        <form action="./light">
+                            <input type="hidden" name="pin" value=1>
+                            <input class="waves-effect waves-light btn button-custom" type="submit" name="state" value="on" />
+                        </form>
+                    </div>
+                    <div class="col s6 m6 l6 left-align">
+                        <form action="./light">
+                            <input type="hidden" name="pin" value=1>
+                            <input class="waves-effect waves-light btn button-custom" type="submit" name="state" value="off" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l3">
+                <div class="card-panel hoverable card-size">
+                  <span class="text-custom">
+                        <p>{RGB}</p>
+                    </span>
+                    <label>Selecciona un color</label>
+                    <div class="row">
+                            <form action="./gpio">
+                                <div class="col s6 m6 l6">
+                                    <input type="color" id="color" name="color" value="#e708e0">
+                                </div>    
+                                <div class="col s6 m6 l6">
+                                    <input class="waves-effect waves-light btn button-custom" type="submit" name="state" value="RGB" />
+                                </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l3">
+                <div class="card-panel hoverable card-size">
+                  <span class="grey darken-4">
+                        <p>{Control PWM}</p>
+                    </span>
+                    <div class="row">
+                        <form action="./gpio">
+                            <div class="col s6 m6 l6">
+                                <p class="range-field">
+                                    <input type="range" class="button-custom" min="0" max="100" name="pwm" value="0" />
+                                </p>
+                            </div>    
+                            <div class="col s6 m6 l6">
+                                <input class="waves-effect waves-light btn button-custom" type="submit" name="state" value="PWM" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m6 l6">
+                <div class="card-panel hoverable card-neopixel">
+                  <span class="grey darken-4">
+                        <p>{NeoPixel8x8}</p>
+                    </span>
+                    <label>Crea un image</label>
+                    <div class="row">
+                            <form action="./gpio">
+                                <div class="col s12 m12 l12">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                </div>
+                                <div class="col s12 m12 l12">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                </div>
+                                <div class="col s12 m12 l12">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                </div>
+                                <div class="col s12 m12 l12">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                </div>
+                                <div class="col s12 m12 l12">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                </div>
+                                <div class="col s12 m12 l12">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                </div>
+                                <div class="col s12 m12 l12">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                </div>
+                                <div class="col s12 m12 l12">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                    <input type="color" id="color" name="color" value="#000000">
+                                </div>
+                                <div class="col s6 m6 l6 right-align">
+                                    <input class="waves-effect waves-light btn button-custom" type="submit" name="state" value="Subir Imágen" />
+                                </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+                
+          <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+          <script src="main.js"></script>
+    </body>
+    </html>
